@@ -1,15 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-
-
 
 export default function Home() {
-  
+
   return (
     <>
-      <div className="relative overflow-hidden max-h-screen">
+      {/* -------------- Banner Section -------------------------- */}
+      <section className="relative overflow-hidden max-h-screen">
         <Image
           src="/1.png"
           width={200}
@@ -27,23 +25,15 @@ export default function Home() {
             Our Initiative towards Skill India
           </motion.h1>
         </div>
-      </div>
-
-      {/* Gallery Section */}
+      </section>
 
       <section className="bg-white text-gray-700 body-font overflow-hidden">
-        {" "}
-        {/* White background, dark gray text */}
         <div className="container px-5 py-24 mx-auto">
-          {" "}
-          {/* Removed overflow-hidden for better image handling */}
           <div className="flex w-full mb-20 flex-wrap">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-green-700 lg:w-1/3 lg:mb-0 mb-4">
               Carving the Future of India
             </h1>
             <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
-              {" "}
-              {/* Text color inherited from parent */}
               We focus on enhancing the skills of every individual, empowering
               them with the tools, knowledge, and opportunities needed to excel
               in their chosen fields. By fostering growth, creativity, and
@@ -53,7 +43,6 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-wrap -m-2">
-            {" "}
             {/* Simplified margin handling */}
             {[1, 2, 3, 4, 5, 6].map(
               (
@@ -61,9 +50,8 @@ export default function Home() {
               ) => (
                 <motion.div
                   key={index} // Add a key for React to efficiently render list items
-                  className={`md:p-2 p-1 w-1/2 md:w-1/3 ${
-                    index === 2 || index === 3 ? "w-full" : ""
-                  }`} // Dynamic width for larger images
+                  className={`md:p-2 p-1 w-1/2 md:w-1/3 ${index === 2 || index === 3 ? "w-full" : ""
+                    }`} // Dynamic width for larger images
                   initial={{
                     opacity: 0,
                     y: index > 3 ? 100 : 0,
@@ -90,11 +78,9 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="bg-white text-gray-700 body-font">
+      <section className=" text-gray-700 bg-green-50 body-font">
         <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 relative">
-            {" "}
-            {/* Added relative for better image positioning */}
             <motion.img
               src="gallery7.jpg"
               alt="About Image"
@@ -104,7 +90,6 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             />
             <div className="absolute inset-0 bg-black bg-opacity-25 z-10"></div>{" "}
-            {/* Overlay for better text contrast */}
           </div>
           <div className="lg:w-1/2 w-full lg:pl-12">
             <motion.h2
@@ -154,10 +139,16 @@ export default function Home() {
       </section>
 
       {/* Courses Section */}
-      <section className="bg-white text-gray-700 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          {" "}
-          {/* Removed overflow-hidden */}
+      <section className="bg-white text-gray-700 body-font py-10">
+        <motion.h2
+          className="text-3xl font-medium text-green-700 mb-4 container mx-auto" // Green heading text
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          Our Courses
+        </motion.h2>
+        <div className="container  mx-auto">
           <div className="flex flex-wrap -m-4">
             {[
               {
@@ -183,16 +174,11 @@ export default function Home() {
                   opacity: 0,
                   y: index === 2 ? 100 : 0,
                   x: index === 0 ? -100 : index === 1 ? 100 : 0,
-                }} // Improved entrance animation
+                }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
                 <div className="h-full bg-green-100 px-8 pt-16 pb-24 rounded-lg text-center relative shadow-md hover:shadow-lg transition duration-300">
-                  {" "}
-                  {/* Green background, subtle shadow, hover effect */}
-                  <h2 className="tracking-widest text-xs title-font font-medium text-green-700 mb-1">
-                    COURSE
-                  </h2>
                   <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-800 mb-3">
                     {course.title}
                   </h1>
@@ -200,8 +186,6 @@ export default function Home() {
                     {course.description}
                   </p>
                   <div className="text-center mt-1 leading-none flex justify-center absolute bottom-0 left-0 w-full py-2 bg-green-500 bg-opacity-20">
-                    {" "}
-                    {/* Subtle background for the view count */}
                     <span className="text-gray-700 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1">
                       <svg
                         className="w-4 h-4 mr-1"
@@ -226,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Contact Us */}
-      <section className="bg-white text-gray-700 body-font relative">
+      <section className="bg-green-50 text-gray-700 body-font relative">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-green-700">

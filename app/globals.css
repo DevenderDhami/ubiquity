@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-bg {
+    background-color: #dcfce7;
+}
+
+.theme-clr {
+    color: #16A34A;
+}
