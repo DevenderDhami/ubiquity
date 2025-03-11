@@ -69,7 +69,7 @@ const AboutUsPage = () => {
         </motion.div>
       </div>
 
-      <div className="vision and mission bg-green-50">
+      <div className="vision and missiion">
         <VisionAndMission />
       </div>
 

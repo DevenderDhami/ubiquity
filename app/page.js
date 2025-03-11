@@ -148,27 +148,27 @@ export default function Home() {
       </section>
 
       {/* Courses Section */}
-      <section className="bg-white text-gray-700 body-font py-14 px-4">
+      <section className="bg-green-50 text-gray-700 body-font py-14 px-4">
         <CoursesList />
       </section>
 
       {/* ---------------- news and notifications ------------------------ */}
-      <section className="bg-green-50 py-10 px-4" id="news">
+      <section className="bg-white py-10 px-4" id="news">
         <NewsAndNotifications />
       </section>
       {/* ----------------- testimonials -------------------- */}
-      <section className="py-10 px-4 " id="testimonial">
+      <section className="bg-green-50 py-10 px-4 " id="testimonial">
         <Testimonials />
       </section>
 
       {/* -------------------- our team------------------------ */}
-      <section className="px-4">
+      <section className="px-4 py-20">
         <OurTeam />
       </section>
 
       {/* Contact Us */}
       <section className="bg-green-50 py-10 px-4">
-        <AnimatedHeading text="Contact Us" variant="fadeDown" />
+        <AnimatedHeading text="Contact Us " variant="fadeDown"  className="container mx-auto"/>
 
         <div className="container mx-auto flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/2 my-auto">

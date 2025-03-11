@@ -5,42 +5,49 @@ import vision from "@/public/images/vision.png";
 
 const VisionAndMission = () => {
   return (
-    <section className="px-4">
-      <div className="container mx-auto">
-        <h2 className="text-3xl text-green-600 font-bold py-5">Our Mission</h2>
-        <div className="mission flex flex-col md:flex-row">
-          <div className="flex flex-col gap-3 indent-7 mission-content w-full md:w-1/2">
-            <p>
-              {`At Ubiquity, our mission is to empower individuals by providing them with accessible, high-quality education and skill development opportunities. We aim to foster personal growth, enhance employability, and contribute to the creation of a skilled workforce that drives progress and innovation, benefiting both individuals and industries.`}
-            </p>
+    <>
+      <section className="px-4 bg-green-50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl text-green-600 font-bold py-5">
+            Our Mission
+          </h2>
+          <div className="mission flex flex-col md:flex-row">
+            <div className="flex flex-col gap-3 indent-7 mission-content w-full md:w-1/2">
+              <p>
+                {`At Ubiquity, our mission is to empower individuals by providing them with accessible, high-quality education and skill development opportunities. We aim to foster personal growth, enhance employability, and contribute to the creation of a skilled workforce that drives progress and innovation, benefiting both individuals and industries.`}
+              </p>
 
-            <p>
-              {`We believe that education is a powerful tool for positive change, and we are committed to making it available to all, regardless of background or circumstances. Through our diverse range of programs, we cater to the unique needs of every learner, ensuring they receive tailored support and resources to succeed in their chosen fields.`}
-            </p>
-            <p>
-              {`
+              <p>
+                {`We believe that education is a powerful tool for positive change, and we are committed to making it available to all, regardless of background or circumstances. Through our diverse range of programs, we cater to the unique needs of every learner, ensuring they receive tailored support and resources to succeed in their chosen fields.`}
+              </p>
+              <p>
+                {`
                 Our programs are designed to equip individuals with the practical skills and knowledge needed to excel in a rapidly evolving global economy. We focus not only on technical expertise but also on building soft skills, such as communication, problem-solving, and leadership, which are essential for thriving in today's workforce.
                 `}
-            </p>
-          </div>
-          <div className="mission-image w-full md:w-1/2">
-            <Image
-              src={mission} 
-              width={800}
-              height={450}
-              alt="Our Mission"
-              className="w-full max-h-[400px] h-auto rounded-lg "
-            />
+              </p>
+            </div>
+            <div className="mission-image w-full md:w-1/2">
+              <Image
+                src={mission}
+                width={800}
+                height={450}
+                alt="Our Mission"
+                className="w-full max-h-[400px] h-auto rounded-lg "
+              />
+            </div>
           </div>
         </div>
+      </section>
 
-        <h2 className="text-3xl text-green-600 font-bold py-5 text-start md:text-center">
+      <section className="container mx-auto px-4" >
+        <h2 className="text-3xl text-green-600 font-bold py-5 ">
           Our Vision
         </h2>
+
         <div className="vision flex flex-col md:flex-row">
           <div className="vision-image w-full md:w-1/2">
             <Image
-              src={vision} 
+              src={vision}
               width={800}
               height={450}
               alt="Our Vision"
@@ -67,8 +74,8 @@ const VisionAndMission = () => {
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

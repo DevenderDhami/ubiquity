@@ -11,76 +11,49 @@ const settings = {
   slidesToShow: 3,
   slidesToScroll: 3,
   arrows: false,
-  autoplay: false,
-  speed: 500,
-  autoplaySpeed: 2000,
-  cssEase: "linear",
+  autoplay: true,
+  speed: 800,
+  autoplaySpeed: 3000,
+  cssEase: "ease-in-out",
   responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false,
-      },
-    },
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false,
-      },
-    },
+    { breakpoint: 1200, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+    { breakpoint: 800, settings: { slidesToShow: 1, slidesToScroll: 1 } },
   ],
 };
 
 const Testimonials = () => {
   return (
-    <div className="mx-auto container ">
-      <AnimatedHeading text="Testimonials" variant="fadeDown" />
-      <Slider {...settings}>
-        {testimonialData?.map((items, i) => (
-          <div key={i}>
-            <div
-              className={`bg-white m-4 p-5 relative ${
-                i % 2 ? "middleDiv" : "testimonial-shadow"
-              }`}
-            >
-              <div className="flex justify-center">
-                <div className="flex flex-col justify-center">
-                  <Image
-                    src={items.imgSrc}
-                    alt={items.name}
-                    width={100}
-                    height={100}
-                    className="inline-block rounded-full mx"
-                  />
-                  <div>
-                    <h3 className="text-lg  text-center font-medium text-darkbrown">
-                      {items.name}
-                    </h3>
-                    <h3 className="text-sm font-normal text-center text-lightgray">
-                      {items.profession}
-                    </h3>
-                  </div>
-                </div>
+    <div className="mx-auto container py-10">
+      <AnimatedHeading text="What Our Clients Say" variant="fadeDown" className="text-center text-4xl font-bold" />
+
+      <Slider {...settings} className="mt-8">
+        {testimonialData?.map((item, i) => (
+          <div key={i} className="px-4">
+            <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 relative 
+            transition-transform duration-300 hover:scale-105 flex flex-col justify-between h-full min-h-[320px]">
+              
+              {/* Profile Section */}
+              <div className="flex flex-col items-center">
+                <Image
+                  src={item.imgSrc}
+                  alt={item.name}
+                  width={80}
+                  height={80}
+                  className="rounded-full border-4 border-green-500 shadow-md"
+                />
+                <h3 className="text-lg font-semibold text-gray-800 mt-3">{item.name}</h3>
+                <h4 className="text-sm text-gray-500">{item.profession}</h4>
               </div>
-              <h4 className="text-base font-normal text-darkgray my-4">
-                {items.comment}
-              </h4>
-              <hr style={{ color: "#D7D5D5" }} />
+
+              {/* Comment Section */}
+              <p className="text-gray-600 mt-4 text-center italic flex-grow">
+                "{item.comment}"
+              </p>
+
+              {/* Decorative Quote */}
+              <div className="absolute top-3 right-3 text-4xl text-green-300 opacity-20">
+                ❝
+              </div>
             </div>
           </div>
         ))}

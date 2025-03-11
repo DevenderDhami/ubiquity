@@ -34,7 +34,7 @@ const OurTeam = () => {
         >
           {ourTeamData?.map((member, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gray-100 shadow-lg rounded-xl p-4 text-center hover:cursor-pointer transition duration-300 hover:scale-105 flex flex-col justify-between h-[300px]">
+              <div className="bg-green-50 shadow-lg rounded-xl p-4 text-center hover:cursor-pointer transition duration-300 hover:scale-105 flex flex-col justify-between h-[300px]">
                 <div className="w-full h-48">
                   <Image
                     src={member?.image}
