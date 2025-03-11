@@ -32,7 +32,7 @@ const OurTeamPage = () => {
       />
 
       <motion.div
-        className="container mx-auto px-4 py-5"
+        className="container mx-auto px-4 md:px-20 py-5"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"

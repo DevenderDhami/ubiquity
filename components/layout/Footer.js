@@ -3,6 +3,7 @@ import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa"
 import Link from "next/link";
 import { CMP_TITLE } from "@/lib/constants";
+import Logo from "../common/Logo";
 
 const socialLinks = [
   {
@@ -61,9 +62,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 py-5 gap-y-10 sm:grid-cols-6 lg:grid-cols-12">
           <div className="sm:col-span-6 lg:col-span-5">
             <div className="flex flex-shrink-0 items-center border-right">
-              <Link href="/" className="text-3xl font-bold">
-                {CMP_TITLE}
-              </Link>
+              <Logo />
             </div>
             <h3 className="text-xs font-medium lh-160 mt-5 mb-4 lg:mb-16 pr-10">
               {CMP_TITLE} is dedicated to empowering learners by offering

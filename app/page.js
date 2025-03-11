@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       {/* -------------- Banner Section -------------------------- */}
-      <section className="relative overflow-hidden max-h-screen px-4">
+      <section className="relative overflow-hidden max-h-screen">
         <Image
           src="/1.png"
           width={200}
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white text-gray-700 body-font overflow-hidden px-4">
+      <section className="bg-white text-gray-700 body-font overflow-hidden px-4 md:px-8">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex w-full mb-20 flex-wrap">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-green-700 lg:w-1/3 lg:mb-0 mb-4">
@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* ----------------- industry logo slider --------------- */}
-      <section className="bg-green-50 px-4">
+      <section className="bg-green-50 px-4 md:px-8">
         <OurPartnersLogoSlider
           title={"Industry Partners"}
           images={industryPartnersImages}
@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className=" text-gray-700 bg-white body-font px-4">
+      <section className=" text-gray-700 bg-white body-font px-4 md:px-8">
         <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 relative">
             <motion.img
@@ -148,26 +148,26 @@ export default function Home() {
       </section>
 
       {/* Courses Section */}
-      <section className="bg-green-50 text-gray-700 body-font py-14 px-4">
+      <section className="bg-green-50 text-gray-700 body-font py-14 px-4  md:px-8">
         <CoursesList />
       </section>
 
       {/* ---------------- news and notifications ------------------------ */}
-      <section className="bg-white py-10 px-4" id="news">
+      <section className="bg-white py-10 px-4 md:px-8" id="news">
         <NewsAndNotifications />
       </section>
       {/* ----------------- testimonials -------------------- */}
-      <section className="bg-green-50 py-10 px-4 " id="testimonial">
+      <section className="bg-green-50 py-10 px-4 md:px-8 " id="testimonial">
         <Testimonials />
       </section>
 
       {/* -------------------- our team------------------------ */}
-      <section className="px-4 py-20">
+      <section className="px-4 md:px-8 py-20">
         <OurTeam />
       </section>
 
       {/* Contact Us */}
-      <section className="bg-green-50 py-10 px-4">
+      <section className="bg-green-50 py-10 px-4 md:px-8">
         <AnimatedHeading text="Contact Us " variant="fadeDown"  className="container mx-auto"/>
 
         <div className="container mx-auto flex flex-col md:flex-row gap-4">

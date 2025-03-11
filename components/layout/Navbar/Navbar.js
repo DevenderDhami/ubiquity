@@ -41,6 +41,7 @@ import Drawer from "./Drawer";
 import { CMP_TITLE } from "@/lib/constants";
 import DrawerData from "./DrawerData";
 import { NavMenu } from "@/data/navMenu";
+import Logo from "@/components/common/Logo";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -75,11 +76,13 @@ const Navbar = () => {
   return (
     <Disclosure as="nav" className="bg-white shadow-md">
       <div className="container mx-auto px-4 py-4 lg:px-8">
-        <div className="relative flex h-10 items-center justify-between">
+        <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-3xl font-bold text-green-600">
+          {/* <Link href="/" className="text-3xl font-bold text-green-600">
+
             {CMP_TITLE}
-          </Link>
+          </Link> */}
+          <Logo />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex space-x-6">
