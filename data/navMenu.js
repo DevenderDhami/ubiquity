@@ -10,9 +10,9 @@ export const NavMenu = [
     {
         name: 'Awards & Recognitions', href: '', current: false, subItems: [
             { name: `Government Partners`, href: '/awards-and-recognitions/government-partnership', current: false },
-            { name: `Placement Partners`, href: '/awards-and-recognitions/placement-tie-ups', current: false },
-            { name: `Industry Partners`, href: '/awards-and-recognitions/industry-tie-ups', current: false },
-            { name: `Our  Approvals`, href: '/awards-and-recognitions/approvals', current: false },
+            { name: `Placement Partners`, href: '/awards-and-recognitions/placement-partners', current: false },
+            { name: `Industry Partners`, href: '/awards-and-recognitions/industry-partners', current: false },
+            { name: `Our  Approvals`, href: '/awards-and-recognitions/awards-and-approvals', current: false },
         ]
     },
     {

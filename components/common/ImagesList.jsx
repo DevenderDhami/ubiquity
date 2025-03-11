@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaEye } from "react-icons/fa";
+import { motion } from "framer-motion";
 import ImageModal from "./ImageModal";
 
 const ImagesList = ({ list }) => {
@@ -53,24 +54,36 @@ const ImagesList = ({ list }) => {
   }, [isModalOpen]);
 
   return (
-    <div className="container mx-auto">
+    <motion.div
+      className="container mx-auto"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {list.map((item, index) => (
-          <div
+          <motion.div
             key={index}
             className="relative cursor-pointer group rounded-lg overflow-hidden"
             onClick={() => openModal(index)}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
           >
-            <img
+            <motion.img
               src={item.imgSrc}
               alt={`ImagesList ${index + 1}`}
-              className="w-full max-h-[300px] object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+              className="w-full max-h-[300px] object-cover rounded-lg shadow-md transition-transform duration-300"
+              whileHover={{ scale: 1.05 }}
             />
 
-            <div className="absolute inset-0 bg-green-100 bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <motion.div
+              className="absolute inset-0 bg-green-100 bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+            >
               <FaEye className="text-white text-4xl" />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
 
@@ -82,7 +95,7 @@ const ImagesList = ({ list }) => {
           prevImage={prevImage}
         />
       )}
-    </div>
+    </motion.div>
   );
 };
 

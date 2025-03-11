@@ -98,7 +98,7 @@ const Navbar = () => {
                         isActive(item.href, item.subItems)
                           ? "text-green-600 font-semibold"
                           : "text-gray-700",
-                        "hover:text-green-600 transition duration-300"
+                        "hover:text-green-600 transition duration-300 text-lg"
                       )}
                     >
                       {item.name}
@@ -111,7 +111,7 @@ const Navbar = () => {
                           {item.subItems.map((subItem) => (
                             <li key={subItem.name}>
                               <Link href={subItem.href} onClick={() => setOpenDropdown(null)}>
-                                <span className="block px-4 py-2 text-gray-700 hover:bg-green-100 transition duration-300 cursor-pointer">
+                                <span className="block px-4  py-2 text-gray-700 hover:bg-green-100 transition duration-300 cursor-pointer">
                                   {subItem.name}
                                 </span>
                               </Link>
@@ -126,7 +126,7 @@ const Navbar = () => {
                     <span
                       className={classNames(
                         isActive(item.href) ? "text-green-600 font-semibold" : "text-gray-700",
-                        "hover:text-green-600 transition duration-300"
+                        "hover:text-green-600 transition duration-300 text-md"
                       )}
                     >
                       {item.name}

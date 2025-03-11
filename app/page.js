@@ -1,6 +1,11 @@
 "use client";
+import OurPartnersLogoSlider from "@/components/common/ourPartnersLogoSlider";
+import ContactForm from "@/components/contact-us/ContactForm";
+import NewsAndNotifications from "@/components/landing-page/NewsAndNotifications";
+import { industryPartnersImages } from "@/lib/constants";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 
 export default function Home() {
 
@@ -43,29 +48,28 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-wrap -m-2">
-            {/* Simplified margin handling */}
             {[1, 2, 3, 4, 5, 6].map(
               (
-                index // Use a map to reduce repetitive code
+                index
               ) => (
                 <motion.div
-                  key={index} // Add a key for React to efficiently render list items
+                  key={index}
                   className={`md:p-2 p-1 w-1/2 md:w-1/3 ${index === 2 || index === 3 ? "w-full" : ""
-                    }`} // Dynamic width for larger images
+                    }`}
                   initial={{
                     opacity: 0,
                     y: index > 3 ? 100 : 0,
                     x: index % 2 === 0 ? 100 : -100,
-                  }} // Staggered entrance animation
+                  }}
                   whileInView={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  whileHover={{ scale: 1.05 }} // Reduced scale slightly for a more subtle effect
+                  whileHover={{ scale: 1.05 }}
                 >
                   <Image
-                    width={500} // Increased default image size
-                    height={300} // Maintain aspect ratio
+                    width={500}
+                    height={300}
                     alt={`gallery ${index}`}
-                    className="w-full object-cover h-full object-center block rounded-lg" // Removed border, consider adding a subtle shadow
+                    className="w-full object-cover h-full object-center block rounded-lg"
                     src={`/gallery${index}.jpg`}
                     loading="lazy"
                     style={{ aspectRatio: "5/3" }}
@@ -77,8 +81,15 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-green-50">
+        <OurPartnersLogoSlider
+          title={"Industry Partners"}
+          images={industryPartnersImages}
+        />
+      </section>
+
       {/* About Section */}
-      <section className=" text-gray-700 bg-green-50 body-font">
+      <section className=" text-gray-700 bg-white body-font">
         <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 relative">
             <motion.img
@@ -112,7 +123,7 @@ export default function Home() {
               improving our services to meet the needs of our users.
             </p>
             <motion.a
-              href="#"
+              href="/about-us"
               className="text-green-700 inline-flex items-center mt-4 hover:text-green-500" // Green link and hover color
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -137,6 +148,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ---------------- news and notifications ------------------------ */}
+      <div className="bg-green-50 py-10" id="news">
+        <NewsAndNotifications />
+      </div>
 
       {/* Courses Section */}
       <section className="bg-white text-gray-700 body-font py-10">
@@ -210,62 +226,36 @@ export default function Home() {
       </section>
 
       {/* Contact Us */}
-      <section className="bg-green-50 text-gray-700 body-font relative">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-green-700">
-              Contact Us
-            </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Kindly fill the form to contact Us!!
-            </p>
+      <section className="bg-green-50  py-10">
+        <motion.h2
+          className="text-3xl font-medium text-green-700 mb-4 container mx-auto" // Green heading text
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          Contact us
+        </motion.h2>
+        <div className="container mx-auto flex flex-col md:flex-row gap-4">
+          <div className="w-full md:w-1/2 my-auto">
+            <motion.img
+              src="/images/contact-us.png"
+              alt="About Image"
+              className="object-center w-full h-96"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            />
           </div>
-          <div className="lg:w-1/2 md:w-2/3 mx-auto">
-            <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label htmlFor="name" className="leading-7 text-sm">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full bg-gray-100 rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-              </div>
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label htmlFor="email" className="leading-7 text-sm">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full bg-gray-100 rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-              </div>
-              <div className="p-2 w-full">
-                <div className="relative">
-                  <label htmlFor="message" className="leading-7 text-sm">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className="w-full bg-gray-100 rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 h-32 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                  ></textarea>
-                </div>
-              </div>
-              <div className="p-2 w-full">
-                <button className="flex mx-auto w-full text-white justify-center bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg transition-all duration-200 ease-in-out">
-                  Submit
-                </button>
-              </div>
-            </div>
+          <div className="w-full md:w-1/2">
+            <motion.div
+              className="w-full"
+              initial={{ opacity: 0, x: 100 }}
+
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <ContactForm />
+            </motion.div>
           </div>
         </div>
       </section>
