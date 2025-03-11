@@ -6,7 +6,7 @@ import AchievementsSection from "@/components/common/AchievementsSection";
 import PageLinks from "@/components/common/pageLink";
 import useRandomImages from "@/lib/hooks/useRandomImages";
 import { ourExpertiesImages } from "@/lib/constants";
-
+import VisionAndMission from "@/components/about-us/VisionAndMission";
 const AboutUsPage = () => {
   const { images, loading, error } = useRandomImages(ourExpertiesImages);
 
@@ -14,7 +14,7 @@ const AboutUsPage = () => {
     <>
       <PageLinks
         title="About Ubiquity"
-        imageUrl="/assets/pagelinks/team.webp"
+        imageUrl="/images/pagelinks/team.webp"
         items={[
           { name: "Home", link: "/" },
           { name: "About Ubiquity", link: "/about-us" },
@@ -66,42 +66,14 @@ const AboutUsPage = () => {
             )}
           </motion.div>
 
-          <motion.div
-            className="flex flex-col gap-2 indent-10 h-full text-gray-700 order-3"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <p>
-              {`By collaborating with local industries and experts, we provide real-world insights that empower learners to stay competitive in an ever-evolving economy. Whether individuals seek to refine their skills or explore new career paths, Ubiquity offers the training and support needed to succeed.`}
-            </p>
-            <p>
-              {`
-             Join us in building a future where skill development in rural areas unlocks endless opportunities, empowering individuals and fostering sustainable economic growth in their communities.
-            `}
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="flex justify-center items-center w-full order-4 md:order-2"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            {loading ? (
-              <></>
-            ) : (
-              <Image
-                src={images?.secondImage}
-                width={800}
-                height={450}
-                alt="Our Work"
-                className="w-full max-h-[300px] h-auto rounded-lg object-cover"
-              />
-            )}
-          </motion.div>
         </motion.div>
+      </div>
 
+      <div className="vision and mission bg-green-50">
+        <VisionAndMission />
+      </div>
+
+      <div className="container mx-auto px-4">
         <motion.div
           className="py-5"
           initial={{ opacity: 0, y: 20 }}

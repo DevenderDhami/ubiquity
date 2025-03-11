@@ -2,6 +2,7 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
+import AnimatedHeading from "../common/Heading";
 
 // Sample Data (Replace with API or dynamic data if needed)
 const announcements = [
@@ -46,14 +47,7 @@ const NewsAndNotifications = ({ isCol }) => {
   return (
     <div className="container mx-auto ">
       <div className="py-5">
-        <motion.h2
-          className="text-3xl font-medium text-green-700 mb-4 container mx-auto" 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          News Updates
-        </motion.h2>
+        <AnimatedHeading text="News Updates" variant="fadeUp" />
         <h4 className="text-gray-600 text-xl font-bold ">
           Latest News & Notice Board
         </h4>

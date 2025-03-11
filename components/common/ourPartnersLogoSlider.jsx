@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
+import AnimatedHeading from "./Heading";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -43,14 +44,7 @@ const OurPartnersLogoSlider = ({ images, title }) => {
       animate="visible"
       variants={fadeInUp}
     >
-      {title && (
-        <motion.h2
-          className="theme-clr text-start text-3xl font-bold"
-          variants={fadeInUp}
-        >
-          {title}
-        </motion.h2>
-      )}
+      {title && <AnimatedHeading text={title} variant="fadeDown" />}
       <div className="py-4">
         <Slider {...settings}>
           {images?.map((item, index) => (

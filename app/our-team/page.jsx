@@ -24,7 +24,7 @@ const OurTeamPage = () => {
     <>
       <PageLinks
         title="Our Team"
-        imageUrl="/assets/pagelinks/team.webp"
+        imageUrl="/images/pagelinks/team.webp"
         items={[
           { name: "Home", link: "/" },
           { name: "Our Team", link: "/our-team" },

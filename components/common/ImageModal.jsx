@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { FaTimes } from "react-icons/fa";
 
 const ImageModal = ({ imgSrc, closeModal, nextImage, prevImage }) => {
   return (
@@ -19,13 +20,19 @@ const ImageModal = ({ imgSrc, closeModal, nextImage, prevImage }) => {
         {/* Close Button */}
         <button
           onClick={closeModal}
-          className="absolute -top-7 right-0 text-white bg-red-600 p-2 rounded-full"
+          className="absolute -top-7 right-0 text-white bg-red-600 p-2 rounded-full hover:bg-red-700 transition duration-300 mb-5"
         >
-          X
+          <FaTimes className="text-lg " />
         </button>
 
         {/* Image */}
-        <Image src={imgSrc} alt="img" height={550} width={550} className="h-full" />
+        <Image
+          src={imgSrc}
+          alt="img"
+          height={500}
+          width={650}
+          className="h-full w-full min-w-[500px]"
+        />
 
         {/* Previous Arrow */}
         <button

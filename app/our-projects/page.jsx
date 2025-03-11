@@ -46,7 +46,7 @@ const OurProjectsPage = () => {
     <>
       <PageLinks
         title="Our Projects"
-        imageUrl="/assets/pagelinks/team.webp"
+        imageUrl="/images/pagelinks/team.webp"
         items={[
           { name: "Home", link: "/" },
           { name: "Our Projects", link: "/our-projects" },
@@ -80,7 +80,7 @@ const OurProjectsPage = () => {
         >
           <table className="w-full border-collapse border border-gray-300 shadow-md">
             <thead>
-              <tr className="bg-gray-200 text-gray-700 text-center border border-gray-400">
+              <tr className="bg-green-100 text-gray-700 text-center border border-gray-400">
                 <th className="p-1 text-sm border border-gray-400">TP Name</th>
                 <th className="p-1 text-sm border border-gray-400">District</th>
                 <th className="p-1 text-sm border border-gray-400">
@@ -134,7 +134,7 @@ const OurProjectsPage = () => {
                   </td>
                 </tr>
               ))}
-              <tr className="font-bold bg-gray-100 text-gray-900 text-left">
+              <tr className="font-bold bg-green-50 text-gray-900 text-left">
                 <td
                   className="p-2 text-sm text-center border border-gray-400"
                   colSpan={5}
@@ -160,29 +160,27 @@ const OurProjectsPage = () => {
             </tbody>
           </table>
         </div>
-
-        {/* Pagination Controls */}
-        <div className="flex justify-center items-center mt-4 space-x-2">
-          <button
-            disabled={currentPage === 1}
-            onClick={() => setCurrentPage(currentPage - 1)}
-            className="px-3 py-1 bg-gray-300 hover:bg-gray-400 disabled:opacity-50"
-          >
-            Prev
-          </button>
-          <span className="font-semibold">
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            disabled={currentPage === totalPages}
-            onClick={() => setCurrentPage(currentPage + 1)}
-            className="px-3 py-1 bg-gray-300 hover:bg-gray-400 disabled:opacity-50"
-          >
-            Next
-          </button>
-        </div>
-
-        {/* <AchievementsSection /> */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center mt-4 space-x-2">
+            <button
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(currentPage - 1)}
+              className="px-3 py-1 bg-gray-300 hover:bg-gray-400 disabled:opacity-50"
+            >
+              Prev
+            </button>
+            <span className="font-semibold">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(currentPage + 1)}
+              className="px-3 py-1 bg-gray-300 hover:bg-gray-400 disabled:opacity-50"
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

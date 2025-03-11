@@ -25,19 +25,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbarin />
-        <div className="min-h-[500px]">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        
+        {/* ✅ Fixed Navbar */}
+        <div className="fixed top-0 left-0 w-full z-50 shadow-md bg-white">
+          <Navbarin />
+        </div>
+
+        {/* ✅ Add padding to avoid content overlap */}
+        <div className="pt-[70px] min-h-[500px]">
           {children}
         </div>
+
         <div className="mb-4 bg-gray-100 py-5 px-6">
-          <OurPartnersLogoSlider
-            title={"Government Partners"}
-            images={govPartnersImages}
-          />
+          <OurPartnersLogoSlider title={"Government Partners"} images={govPartnersImages} />
         </div>
+
         <Footer />
       </body>
     </html>

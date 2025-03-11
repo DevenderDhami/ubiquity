@@ -4,7 +4,7 @@ export const NavMenu = [
         name: 'About us', href: '', current: false, subItems: [
             { name: `Chairman's Message`, href: '/chairman-message', current: false },
             { name: 'Our Team', href: '/our-team', current: false },
-            { name: 'About Ubiquity', href: '/about-us', current: false }
+            { name: 'About Ubiquity', href: '/about-us', current: false },
         ]
     },
     {
@@ -21,6 +21,6 @@ export const NavMenu = [
             { name: 'Our Specialties', href: '/our-specialities', current: false },
         ]
     },
-
+    { name: 'Gallery', href: '/gallery', current: false },
     { name: 'Contact Us', href: '/contact-us', current: false },
 ];

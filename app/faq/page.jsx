@@ -2,7 +2,8 @@
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-// import faq_img from "@/public/assets/faqs/19333428.jpg";
+import { motion } from "framer-motion"; // Import framer-motion
+import faq_img from "@/public/images/faq.png";
 import Image from "next/image";
 import PageLinks from "@/components/common/pageLink";
 
@@ -34,18 +35,29 @@ const FaqPage = () => {
     <>
       <PageLinks
         title="FAQ"
-        imageUrl="/assets/pagelinks/faq.webp"
+        imageUrl="/images/pagelinks/faq.webp"
         items={[
           { name: "Home", link: "/" },
           { name: "FAQ", link: "/faq" },
         ]}
       />
-      <div className="container mx-auto mt-10 p-6">
-        <h1 className="text-3xl font-semibold text-center text-black mb-8">
+      <div className="container mx-auto mt-10 p-6 pb-20">
+        <motion.h2
+          className="w-full py-5 text-3xl text-green-600 font-bold"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           Frequently Asked Questions
-        </h1>
+        </motion.h2>
+
         <div className="flex flex-col md:flex-row justify-center">
-          <div className="w-full md:w-1/2">
+          <motion.div
+            className="w-full md:w-1/2 mt-6 md:mt-0"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="space-y-4 bg-green-50 p-5">
               {faqData.map((faq, index) => (
                 <Disclosure
@@ -63,24 +75,42 @@ const FaqPage = () => {
                           <FaChevronDown className="h-6 w-6 text-gray-600" />
                         )}
                       </Disclosure.Button>
-                      <Disclosure.Panel className="p-4 text-gray-700 bg-gray-50">
-                        {faq.answer}
-                      </Disclosure.Panel>
+
+                      {/* Animate FAQ Answer Panel with Framer Motion */}
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{
+                          opacity: open ? 1 : 0,
+                          height: open ? "auto" : 0,
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Disclosure.Panel className="p-4 text-gray-700 bg-gray-50">
+                          {faq.answer}
+                        </Disclosure.Panel>
+                      </motion.div>
                     </>
                   )}
                 </Disclosure>
               ))}
             </div>
-          </div>
-          <div className="w-full md:w-1/2">
-            {/* <Image
+          </motion.div>
+
+          {/* Animate the Image with Framer Motion */}
+          <motion.div
+            className="w-full md:w-1/2 mt-6 md:mt-0"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
               src={faq_img}
               width={400}
               height={400}
               alt="FAQ Illustration"
-              className="w-full object-cover"
-            /> */}
-          </div>
+              className="w-full max-h-[300px] h-auto rounded-lg object-cover"
+            />
+          </motion.div>
         </div>
       </div>
     </>

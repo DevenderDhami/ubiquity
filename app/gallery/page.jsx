@@ -11,7 +11,7 @@ const GalleryPage = () => {
     <>
       <PageLinks
         title="Gallery"
-        imageUrl="/assets/pagelinks/gallery.webp"
+        imageUrl="/images/pagelinks/gallery.webp"
         items={[
           { name: "Home", link: "/" },
           { name: "Gallery", link: "/gallery" },

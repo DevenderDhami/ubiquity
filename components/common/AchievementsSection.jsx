@@ -23,12 +23,12 @@ const AchievementsSection = () => {
           batches: acc.batches + (tp.batches || 0),
           enrolled: acc.enrolled + (tp.enrolled || 0),
           trained: acc.trained + (tp.trained || 0),
-          underTraining: acc.underTraining + (tp.underTraining || 0),
+          // underTraining: acc.underTraining + (tp.underTraining || 0),
           placement: acc.placement + (tp.placement || 0),
         }),
-        { batches: 0, enrolled: 0, trained: 0, underTraining: 0, placement: 0 }
+        { batches: 0, enrolled: 0, trained: 0,  placement: 0 }
       )
-    : { batches: 0, enrolled: 0, trained: 0, underTraining: 0, placement: 0 };
+    : { batches: 0, enrolled: 0, trained: 0,  placement: 0 };
 
   const stats = [
     {
@@ -45,11 +45,6 @@ const AchievementsSection = () => {
       label: "Total Trained",
       value: totals.trained,
       icon: <FaCheckCircle className="text-purple-600 text-4xl" />,
-    },
-    {
-      label: "Under Training",
-      value: totals.underTraining,
-      icon: <FaHourglassHalf className="text-orange-600 text-4xl" />,
     },
     {
       label: "Total Placements",
@@ -77,7 +72,7 @@ const AchievementsSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-white shadow-lg rounded-xl p-5 border border-gray-200 hover:bg-orange-50 text-center"
+            className="bg-white shadow-lg rounded-xl p-5 border border-gray-200 hover:bg-green-50 text-center"
           >
             <div className="flex justify-center mb-3">{stat.icon}</div>
             <h4 className="text-xl font-semibold text-gray-800">

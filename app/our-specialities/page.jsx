@@ -34,7 +34,7 @@ const OurSpecialitiesPage = () => {
     <>
       <PageLinks
         title="Our Specialities"
-        imageUrl="/assets/pagelinks/team.webp"
+        imageUrl="/images/pagelinks/team.webp"
         items={[
           { name: "Home", link: "/" },
           { name: "Our Specialities", link: "/our-specialities" },
