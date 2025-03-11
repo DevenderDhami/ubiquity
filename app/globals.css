@@ -3,25 +3,32 @@
 @tailwind utilities;
 
 .theme-bg {
-    background-color: #dcfce7;
+  background-color: #dcfce7;
 }
 
 .theme-clr {
-    color: #16A34A;
+  color: #16A34A;
 }
 
 
 @keyframes marquee {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
+  0% {
+    transform: translateY(100%);
   }
-  .animate-marquee {
-    animation: marquee 10s linear infinite;
+
+  100% {
+    transform: translateY(-100%);
   }
-  .hover\:pause:hover {
-    animation-play-state: paused;
-  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}
+
+.hover\:pause:hover {
+  animation-play-state: paused;
+}
+
+* {
+  text-align: justify;
+}
