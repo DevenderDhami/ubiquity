@@ -14,7 +14,7 @@ const PrivacyPolicyPage = () => {
           { name: "Privacy Policy", link: "/privacy-policy" },
         ]}
       />
-      <div className="container mx-auto py-8 px-5">
+      <div className="container mx-auto py-8 px-5 text-justify">
         <div className="text-gray-800 text-sm">
           We value the trust you place in us and recognize the importance of
           secure transactions and information privacy. This Privacy Policy
@@ -37,7 +37,7 @@ const PrivacyPolicyPage = () => {
             <h4 className="font-bold py-2 theme-clr">{section.title}</h4>
             <div className="card-body">
               <div
-                className="text-gray-700 text-sm"
+                className="text-gray-700 text-sm text-justify"
                 dangerouslySetInnerHTML={{ __html: section.content }}
               />
             </div>

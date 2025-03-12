@@ -117,7 +117,7 @@ const PlacementTieUpsPage = () => {
         ]}
       />
 
-      <div className="container mx-auto py-8 px-4   flex flex-col gap-4 text-gray-700">
+      <div className="container mx-auto py-8 px-4   flex flex-col gap-4 text-gray-700 text-justify">
         <div className="flex flex-col md:flex-row items-center gap-6">
           {/* Animated Text Section */}
           <motion.div

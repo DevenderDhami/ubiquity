@@ -31,7 +31,7 @@ const CourseCard = ({ course }) => {
         <p className="text-xl text-center font-semibold theme-clr hover:font-bold">
           {course.title}
         </p>
-        <p className="text-sm text-gray-700 mt-2">
+        <p className="text-sm text-gray-700 mt-2 text-justify">
           {isExpanded ? course.description : `${truncatedDesc}...`}
         </p>
         {showReadMore && (

@@ -16,9 +16,9 @@ export default function Home() {
   return (
     <>
       {/* -------------- Banner Section -------------------------- */}
-      <section className="relative overflow-hidden max-h-screen">
+      <section className="relative overflow-hidden max-h-screen ">
         <Image
-          src="/1.png"
+          src="/images/banners/ubiquity.jpg"
           width={200}
           height={200}
           alt="Hero Banner"
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white text-gray-700 body-font overflow-hidden px-4 md:px-8">
+      <section className="bg-white text-gray-700 body-font overflow-hidden px-4 md:px-8 text-justify">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex w-full mb-20 flex-wrap">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-green-700 lg:w-1/3 lg:mb-0 mb-4">
@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className=" text-gray-700 bg-white body-font px-4 md:px-8">
+      <section className=" text-gray-700 bg-white body-font px-4 md:px-8 text-justify">
         <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 relative">
             <motion.img

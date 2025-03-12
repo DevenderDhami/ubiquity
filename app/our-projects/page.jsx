@@ -81,19 +81,11 @@ const OurProjectsPage = () => {
           <table className="w-full border-collapse border border-gray-300 shadow-md">
             <thead>
               <tr className="bg-green-100 text-gray-700 text-center border border-gray-400">
-                <th className="p-1 text-sm border border-gray-400">TP Name</th>
                 <th className="p-1 text-sm border border-gray-400">District</th>
-                <th className="p-1 text-sm border border-gray-400">
-                  Sector Name
-                </th>
                 <th className="p-1 text-sm border border-gray-400">Course</th>
                 <th className="p-1 text-sm border border-gray-400">Scheme</th>
                 <th className="p-1 text-sm border border-gray-400">Batches</th>
                 <th className="p-1 text-sm border border-gray-400">Enrolled</th>
-                <th className="p-1 text-sm border border-gray-400">Trained</th>
-                <th className="p-1 text-sm border border-gray-400">
-                  Under Training
-                </th>
                 <th className="p-1 text-sm border border-gray-400">
                   Placement
                 </th>
@@ -103,13 +95,7 @@ const OurProjectsPage = () => {
               {paginatedData.map((tp, index) => (
                 <tr key={index} className="text-gray-700 text-left border">
                   <td className="p-1 text-sm border border-gray-300">
-                    {tp.tpName}
-                  </td>
-                  <td className="p-1 text-sm border border-gray-300">
                     {tp.district}
-                  </td>
-                  <td className="p-1 text-sm border border-gray-300">
-                    {tp.sector.name}
                   </td>
                   <td className="p-1 text-sm border border-gray-300">
                     {tp.sector.course}
@@ -124,12 +110,6 @@ const OurProjectsPage = () => {
                     {tp.enrolled}
                   </td>
                   <td className="p-1 text-sm border border-gray-300">
-                    {tp.trained}
-                  </td>
-                  <td className="p-1 text-sm border border-gray-300">
-                    {tp.underTraining}
-                  </td>
-                  <td className="p-1 text-sm border border-gray-300">
                     {tp.placement}
                   </td>
                 </tr>
@@ -137,7 +117,7 @@ const OurProjectsPage = () => {
               <tr className="font-bold bg-green-50 text-gray-900 text-left">
                 <td
                   className="p-2 text-sm text-center border border-gray-400"
-                  colSpan={5}
+                  colSpan={3}
                 >
                   Total
                 </td>
@@ -146,12 +126,6 @@ const OurProjectsPage = () => {
                 </td>
                 <td className="p-2 text-sm border border-gray-400">
                   {totals.enrolled}
-                </td>
-                <td className="p-2 text-sm border border-gray-400">
-                  {totals.trained}
-                </td>
-                <td className="p-2 text-sm border border-gray-400">
-                  {totals.underTraining}
                 </td>
                 <td className="p-2 text-sm border border-gray-400">
                   {totals.placement}

@@ -20,7 +20,7 @@ const GovernmentPartnersPage = () => {
         ]}
       />
 
-      <div className="container mx-auto py-8 px-10 flex flex-col gap-5">
+      <div className="container mx-auto py-8 px-10 flex flex-col gap-5 text-justify">
         <motion.h2
           className="text-4xl theme-clr font-bold"
           initial={{ opacity: 0, y: -50 }}
@@ -30,7 +30,7 @@ const GovernmentPartnersPage = () => {
           Government Partnership
         </motion.h2>
 
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row text-justify">
           <div className="content w-full md:w-2/3">
             <motion.p
               className="text-gray-600 indent-10"

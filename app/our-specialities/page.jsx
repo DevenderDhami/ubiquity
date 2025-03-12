@@ -40,7 +40,7 @@ const OurSpecialitiesPage = () => {
           { name: "Our Specialities", link: "/our-specialities" },
         ]}
       />
-      <div className="container mx-auto px-4  py-5">
+      <div className="container mx-auto px-4  py-5 text-justify">
         <h4 className="theme-clr text-4xl font-bold text-start ">
           Our Specialities
         </h4>
@@ -88,7 +88,7 @@ const OurSpecialitiesPage = () => {
           <h2 className="text-2xl font-bold text-gray-800">
             Discover Our Approach to Skill Development
           </h2>{" "}
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 mt-2 ">
             At Euperaxis, we follow a structured approach to mobilize, train,
             and place candidates, ensuring they gain the right skills and secure
             meaningful employment.
@@ -103,7 +103,7 @@ const OurSpecialitiesPage = () => {
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">
                   {category.title}
                 </h3>
-                <p className="text-gray-600">{category.description}</p>
+                <p className="text-gray-600 text-justify">{category.description}</p>
               </div>
             ))}
           </div>

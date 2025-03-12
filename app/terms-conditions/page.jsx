@@ -14,7 +14,7 @@ const TermsConditionPage = () => {
           { name: "Terms And Conditions", link: "/terms-conditions" },
         ]}
       />
-      <div className="container mx-auto py-8 px-5">
+      <div className="container mx-auto py-8 px-5 text-justify">
         <div className="text-gray-800 text-sm flex flex-col gap-3">
           <p>
             Any user accessing and using the site of the organization/company

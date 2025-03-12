@@ -21,7 +21,7 @@ const IndustryPartnersPage = () => {
         ]}
       />
 
-      <div className="container mx-auto py-10 px-4 flex flex-col ">
+      <div className="container mx-auto py-10 px-4 flex flex-col text-justify ">
         <motion.div
           className="text-4xl text-green-600 font-bold "
           initial={{ opacity: 0, x: 50 }}

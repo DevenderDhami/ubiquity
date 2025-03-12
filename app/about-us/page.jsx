@@ -20,7 +20,7 @@ const AboutUsPage = () => {
           { name: "About Ubiquity", link: "/about-us" },
         ]}
       />
-      <div className="container mx-auto py-8 px-4 md:px-8 ">
+      <div className="container mx-auto py-8 px-4 md:px-8 text-justify ">
         <h3 className="theme-clr font-bold text-4xl">About Ubiquity</h3>
 
         <motion.div
@@ -69,11 +69,11 @@ const AboutUsPage = () => {
         </motion.div>
       </div>
 
-      <div className="vision and missiion">
+      <div className="vision and missiion text-justify">
         <VisionAndMission />
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 text-justify">
         <motion.div
           className="py-5"
           initial={{ opacity: 0, y: 20 }}
